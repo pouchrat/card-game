@@ -1,0 +1,19 @@
+{
+  "name": "card-game",
+  "version": "0.0.1",
+  "description": "A little personal project to create a simple card game. Repository name is subject to change.",
+  "main": "/src/script/index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pouchrat/card-game.git"
+  },
+  "author": "Pouchrat",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Pouchrat/card-game/issues"
+  },
+  "homepage": "https://github.com/Pouchrat/card-game#readme"
+}

@@ -1,0 +1,88 @@
+body {
+    height:100%;
+    width:100%;
+}
+
+/*
+header {
+
+}
+
+nav {
+
+}
+*/
+/******************/
+
+.card {
+    border: 4px solid black;
+    border-radius: 5px;
+    height: 300px;
+    width: 200px;
+    padding: 1%;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    box-sizing: content-box;
+}
+
+.card-header {
+    /* background-color: pink; */ /* debug */
+    height: 16%;
+    box-sizing: border-box;
+    overflow: auto;
+    scrollbar-width: none;
+}
+
+.card-title {
+    /* TODO */
+    float: left;
+    width: 75%;
+    font-size: 20px;
+    font-weight: bold;
+    border-bottom: 1px solid black;
+}
+
+.card-type {
+    /* TODO */
+    float: left;
+    font-style: italic;
+    font-size: 16px;
+}
+
+.card-value {
+    /* background-color: rgb(160, 224, 240); */
+    border: 1px solid black;
+    border-radius: 10px;
+    height: 100%;
+    width: 24%;
+    float: right;
+    font-size: 32px;
+    text-align:center;
+    box-sizing: border-box;
+}
+
+.card-art {
+    background-color: palegreen; /* debug */
+    /* TODO: background-image: url(); */
+    border-radius: 10px;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    height: 60%;
+    box-sizing: border-box;
+}
+
+.card-desc {
+    /* background-color: paleturquoise; */ /* debug */
+    font-size: 13px;
+    font-style: italic;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 2px 5px 2px 5px;
+    height: 22%;
+    box-sizing: border-box;
+    overflow-y: auto;
+    scrollbar-width: none;
+}
+
+.card-header::-webkit-scrollbar, .card-desc::-webkit-scrollbar {
+    display:none;
+}

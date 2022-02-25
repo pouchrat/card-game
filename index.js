@@ -1,34 +1,55 @@
 var http = require('http');
 var fs = require('fs');
 
-http.createServer(function (req,res){
-    if(req.url === '/') {
-    fs.readFile('src/index.html',function(err,data){
-      res.writeHead(200,{'Content-Type': 'text/html'});
-      res.write(data);
-      res.end();
-  });
-    }
-    else if(req.url === '/styles.css') {
-    fs.readFile('src/styles.css',function(err,data){
-      res.writeHead(200,{"Content-Type": "text/css"});
-      res.write(data);
-      res.end();
-    });
-    }
-    else if(req.url === '/script/main.js') {
-       fs.readFile('src/script/main.js',function(err,data) {
-          res.writeHead(200,{"Content-Type": "text/javascript"});
-          res.write(data);
-          res.end();
-       });
-    }
-    else if(req.url === '/script/Card.js') {
-      fs.readFile('src/script/Card.js',function(err,data) {
-         res.writeHead(200,{"Content-Type": "text/javascript"});
+// Create server
+http.createServer(function (req, res){
+   // Main index
+   if (req.url == '/') {
+      fs.readFile('src/index.html', function(err, data){
+         res.writeHead(200, {'Content-Type': 'text/html'});
          res.write(data);
          res.end();
       });
-   } // TODO: Make it so I don't have to write literally every file I might use
+   }
+   // Any other index, called as /
+   else if(/(\/)$/.test(req.url)) {
+      fs.readFile('src' + req.url + 'index.html', function(err, data){
+         res.writeHead(200, {'Content-Type': 'text/html'});
+         res.write(data);
+         res.end();
+      });
+   }
+   // Any html file
+   else if (/(\.html)$/.test(req.url)) {
+      fs.readFile('src' + req.url, function(err, data) {
+         res.writeHead(200, {"Content-Type": "text/html"});
+         res.write(data);
+         res.end();
+      });
+   }
+   // Any css file
+   else if(/(\.css)$/.test(req.url)) {
+      fs.readFile('src' + req.url, function(err, data){
+         res.writeHead(200, {"Content-Type": "text/css"});
+         res.write(data);
+         res.end();
+      });
+   }
+   // Any js file
+   else if(/(\.js)$/.test(req.url)) {
+      fs.readFile('src' + req.url, function(err, data) {
+          res.writeHead(200, {"Content-Type": "text/javascript"});
+          res.write(data);
+          res.end();
+      });
+   }
+   // Any url not ending in a file extension => parse as html
+   else if (!(/(\..+)/.test(req.url))) {
+      fs.readFile('src' + req.url + '/index.html', function(err, data){
+         res.writeHead(200, {'Content-Type': 'text/html'});
+         res.write(data);
+         res.end();
+      });
+   }
 
 }).listen(3000);

@@ -44,7 +44,7 @@ http.createServer(function (req, res){
       });
    }
    // Any url not ending in a file extension => parse as html
-   else if (!(/(\..+)/.test(req.url))) {
+   else if (!(/(\.\w+)/.test(req.url))) {
       fs.readFile('src' + req.url + '/index.html', function(err, data){
          res.writeHead(200, {'Content-Type': 'text/html'});
          res.write(data);

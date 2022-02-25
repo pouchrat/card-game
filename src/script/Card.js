@@ -1,6 +1,6 @@
 export class Card {
     constructor(title="",type=0,val=0,flavor=``,art="") {
-        this.types = ["air", "earth", "fire", "water"];
+        const types = ["air", "earth", "fire", "water"];
 
         this.title = title;
         this.type = ((type > -1 && type < types.length) ? 

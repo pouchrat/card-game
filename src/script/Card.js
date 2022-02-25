@@ -8,7 +8,7 @@ export class Card {
                         types[type] : types[0]);
         this.val = (val > -1 && val < 16) ? val : 0;
         this.flavor = flavor;
-        this.art = art; // TODO: Placeholder art
+        this.art = art;
     }
 
     // Getter

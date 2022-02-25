@@ -1,7 +1,8 @@
 export class Card {
-    constructor(title="",type=0,val=0,flavor=``,art="") {
+    constructor(id=0,title="",type=0,val=0,flavor=``,art="") {
         const types = ["air", "earth", "fire", "water"];
 
+        this.id = id;
         this.title = title;
         this.type = ((type > -1 && type < types.length) ? 
                         types[type] : types[0]);
@@ -13,6 +14,7 @@ export class Card {
     // Getter
     get card() {
         return [
+            this.id,
             this.title, 
             this.type, 
             this.val, 

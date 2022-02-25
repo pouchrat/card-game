@@ -6,7 +6,6 @@ var fs = require('fs');
 var path = require('path');
 
 http.createServer(function (request, response) {
-   console.log('request ', request.url);
 
    var filePath = './src' + request.url;
    if (/(\/)$/.test(filePath)) {
@@ -15,7 +14,6 @@ http.createServer(function (request, response) {
    else if (path.extname(filePath) == "") {
       filePath += '/index.html';
    }
-   console.log("filePath " + filePath);
 
    var extname = String(path.extname(filePath)).toLowerCase();
    var mimeTypes = {
@@ -58,4 +56,4 @@ http.createServer(function (request, response) {
    });
 
 }).listen(3000);
-console.log('Server running at http://127.0.0.1:3000/');
+console.log('Server running at localhost:3000');

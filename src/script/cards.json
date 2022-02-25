@@ -1,0 +1,32 @@
+{
+    "cards": [
+        {
+            "title": "Card of Creation",
+            "type": 1,
+            "val": 15,
+            "flavor": "A card to pave the way.",
+            "art": "/assets/default.png"
+        },
+        {
+            "title": "Example Fire Card",
+            "type": 2,
+            "val": 3,
+            "flavor": "Oooh spicy",
+            "art": "/assets/default.png"
+        },
+        {
+            "title": "Example Water Card",
+            "type": 3,
+            "val": 6,
+            "flavor": "Slurp.",
+            "art": "/assets/default.png"
+        },
+        {
+            "title": "Example Air Card",
+            "type": 0,
+            "val": 9,
+            "flavor": "Easy, breezy, beautiful.",
+            "art": "/assets/default.png"
+        }
+    ]
+}
